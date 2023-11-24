@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert SGPA to Percentage</title>
+    <style>
+        body {
+            background-color: pink;
+            text-shadow: none;
+            font-family: sans-serif;
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="arithmetic.jpg">
+</head>
+<body>
+    <h1>Enter your SGPA into the box and we will convert it to percentage</h1>
+    <form id="sgpaForm">
+        SGPA <input type="number" id="mySGPA" step="0.01" placeholder="Enter SGPA" required>
+        <br>
+        Submit <input type="button" value="Submit Now" onclick="calculatePercentage()">
+    </form>
+    <script>
+        function calculatePercentage() {
+            let val = parseFloat(document.getElementById("mySGPA").value);
+            
+            if (!isNaN(val)) {
+                let percentage = (val * 10) - 7.5;
+                alert("Your percentage is: " + percentage.toFixed(2) + "%");
+            } else {
+                alert("Please enter a valid SGPA");
+            }
+        }
+    </script>
+</body>
+</html>
